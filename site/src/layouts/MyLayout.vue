@@ -2,20 +2,34 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          icon="menu"
-          aria-label="Menu"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-icon name="today" style="font-size: 3em;" />
+          <q-expansion-item
+          expand-separator
+          icon="style"
+          caption="Boards"
+        >
+          <q-card>
+            <div style="color: #000;">
+              <ul>
+                <li>
+                  board1
+                </li>
+                <li>
+                  board2
+                </li>
+                <li>
+                  board2
+                </li>
+              </ul>
+            </div>
+          </q-card>
+        </q-expansion-item>
+        <q-input filled v-model="text" label="Filled" />
+        <q-btn-group>
+          <q-btn icon="timeline" />
+          <q-btn icon="visibility" />
+          <q-btn icon="update" />
+        </q-btn-group>
       </q-toolbar>
     </q-header>
 
@@ -101,3 +115,11 @@ export default {
   },
 };
 </script>
+<style lang="stylus">
+  .bg {
+    color: #000;
+  }
+  .teste {
+    position: absolute;
+  }
+</style>

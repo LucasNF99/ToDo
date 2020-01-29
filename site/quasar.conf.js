@@ -101,7 +101,7 @@ module.exports = function (ctx) {
       manifest: {
         name: 'ToDo',
         short_name: 'ToDo',
-        description: 'A Quasar Framework app',
+        description: '',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',

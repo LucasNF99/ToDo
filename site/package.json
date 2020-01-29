@@ -1,7 +1,7 @@
 {
   "name": "to-do",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
+  "description": "",
   "productName": "ToDo",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
