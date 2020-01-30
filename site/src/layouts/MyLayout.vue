@@ -17,11 +17,3 @@ export default {
   },
 };
 </script>
-<style lang="stylus">
-  .bg {
-    color: #000;
-  }
-  .teste {
-    position: absolute;
-  }
-</style>
