@@ -1,14 +1,14 @@
 <template>
   <q-page>
-    <div class="o-list-home">
-      <q-list bordered>
-        <q-item clickable v-ripple>
+    <div class="lists">
+      <q-list class="o-list">
+        <q-item clickable v-ripple class="item-list">
           <q-item-section>
             <q-icon name="home"/>
           </q-item-section>
           <q-item-section>Home</q-item-section>
         </q-item>
-        <q-item clickable v-ripple>
+        <q-item clickable v-ripple class="item-list">
           <q-item-section>
             <q-icon name="all_inbox"/>
           </q-item-section>
@@ -16,19 +16,21 @@
         </q-item>
       </q-list>
 
-      <q-list bordered>
-        <q-item-section>Recently viewed</q-item-section>
-        <q-item clickable v-ripple>
+      <q-list class="o-list">
+        <q-toolbar>
+          <q-toolbar-title>Recently viewed</q-toolbar-title>
+        </q-toolbar>
+        <q-item clickable v-ripple class="item-list">
           <q-item-section>
-            <q-icon name="home"/>
+            <img src="" alt="">
           </q-item-section>
-          <q-item-section>Home</q-item-section>
+          <q-item-section>Nh tracking</q-item-section>
         </q-item>
-        <q-item clickable v-ripple>
+        <q-item clickable v-ripple class="item-list">
           <q-item-section>
-            <q-icon name="all_inbox"/>
+            <img src="" alt="">
           </q-item-section>
-          <q-item-section>Boards</q-item-section>
+          <q-item-section>TG</q-item-section>
         </q-item>
       </q-list>
     </div>

@@ -1,7 +1,7 @@
 <template>
       <q-header elevated>
       <q-toolbar>
-        <q-icon name="house" style="font-size: 3em;" />
+        <q-icon name="home" style="font-size: 3em;" />
         <q-btn-dropdown stretch flat label="Boards">
           <q-input v-model="text" label="Standard" />
           <q-list>
