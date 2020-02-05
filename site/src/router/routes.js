@@ -7,6 +7,15 @@ const routes = [
       { path: '', component: () => import('pages/Index.vue') },
     ],
   },
+  {
+    path: '/boards',
+    component: () => import('layouts/MyLayout.vue'),
+    children: [
+      { path: '/nh-tracking', name: 'nhtracking', component: () => import('pages/board.vue') },
+      { path: '/fatec', name: 'fatec', component: () => import('pages/board.vue') },
+      { path: '/projects', name: 'projects', component: () => import('pages/board.vue') },
+    ],
+  },
 ];
 
 // Always leave this as last one

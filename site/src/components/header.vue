@@ -1,8 +1,10 @@
 <template>
   <q-header elevated  class="o-header no-shadow" >
-    <q-toolbar class="o-header no-shadow" >
-      <div class="o-header_boards">
-        <q-icon name="home" style="font-size: 3em;" />
+    <q-toolbar class="o-toolbar no-shadow" >
+      <div class="o-header_main">
+        <q-btn name="home" to="/">
+          <q-icon name="home"/>
+        </q-btn>
         <shBoard></shBoard>
         <q-input color="black"  filled v-model="text">
           <template v-slot:append>
@@ -10,7 +12,7 @@
           </template>
         </q-input>
       </div>
-      <btnGroup></btnGroup>
+      <btnGroup :icons="icons"></btnGroup>
     </q-toolbar>
   </q-header>
 </template>
@@ -28,6 +30,11 @@ export default {
   data() {
     return {
       text: '',
+      icons: [
+        { name: 'add' },
+        { name: 'info' },
+        { name: 'notifications' },
+      ],
     };
   },
 };
