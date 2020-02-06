@@ -6,7 +6,7 @@
           <q-icon name="home"/>
         </q-btn>
         <shBoard></shBoard>
-        <q-input color="black"  filled v-model="text">
+        <q-input  filled v-model="text">
           <template v-slot:append>
             <q-icon name="search" />
           </template>

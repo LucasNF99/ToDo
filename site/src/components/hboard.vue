@@ -1,11 +1,17 @@
 <template>
   <q-header class="o-board_header">
-   <div class="">
-      <q-toolbar class="o-toolbar_board" >
-        <h1 class="a-title">{{boards[0].name}}</h1>
-        <btnGroup :icons="icons"></btnGroup>
-      </q-toolbar>
-   </div>
+    <q-toolbar class="o-toolbar_board" >
+      <h1 class="a-title">{{boards[0].name}}</h1>
+      <div>
+        <q-avatar size="md">
+          <img src="https://cdn.quasar.dev/img/avatar.png">
+        </q-avatar>
+        <q-btn label="Invite" no-caps>
+          <q-icon name="plus_one"/>
+        </q-btn>
+      </div>
+      <btnGroup :icons="icons" @evt="btnClick"></btnGroup>
+    </q-toolbar>
   </q-header>
 </template>
 
@@ -21,7 +27,7 @@ export default {
   data() {
     return {
       icons: [
-        { name: 'menu', label: 'menu' },
+        { name: 'more_horiz', label: 'Menu' },
       ],
     };
   },
@@ -31,6 +37,9 @@ export default {
     ]),
   },
   methods: {
+    btnClick(evt) {
+      console.log(evt);
+    },
     ...mapActions([
       'getBoards',
     ]),

@@ -2,10 +2,9 @@
   <div>
     <q-btn class="a-btn btn-boards" no-caps label="Boards"
     icon="assessment" @click="selectBoards = true" />
-
     <q-dialog v-model="selectBoards" full-height position="left">
       <div class="m-boards_content">
-        <q-input outlined v-model="searchBoard" label="Find boards by name..." />
+        <q-input outlined :v-model="searchBoard" label="Find boards by name..." />
         <q-list class="m-borads_list">
           <q-item clickable v-ripple dense v-for="board in boards" v-bind:key="board.id"
           class="m-borads_list-item" :to="board.router">
