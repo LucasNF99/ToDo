@@ -10,7 +10,36 @@
           <q-icon name="plus_one"/>
         </q-btn>
       </div>
-      <btnGroup :icons="icons" @evt="btnClick"></btnGroup>
+      <btnGroup :icons="icons" @evt="selectMenu = true"></btnGroup>
+      <q-dialog class="m-modal-menu" v-model="selectMenu" full-height position="right">
+        <q-card class="m-card-menu">
+          <div class="m-card-menu_cnt">
+            <q-toolbar class="a-menu-tollbar">
+            <q-toolbar-title align="center">
+              Menu
+            </q-toolbar-title>
+            <q-btn flat round dense icon="close" @click="selectMenu = false"/>
+          </q-toolbar>
+          <q-card-section>
+            <q-list>
+              <q-item clickable v-ripple>
+                <q-item-section class="a-menu-list-item">
+                  <q-icon name="assessment"/>
+                  About this board
+                </q-item-section>
+              </q-item>
+
+              <q-item clickable v-ripple>
+                <q-item-section class="a-menu-list-item">
+                  <q-icon  name="delete" />
+                  Delete this board
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-card-section>
+          </div>
+        </q-card>
+      </q-dialog>
     </q-toolbar>
   </q-header>
 </template>
@@ -26,6 +55,7 @@ export default {
   },
   data() {
     return {
+      selectMenu: false,
       icons: [
         { name: 'more_horiz', label: 'Menu' },
       ],
@@ -37,9 +67,6 @@ export default {
     ]),
   },
   methods: {
-    btnClick(evt) {
-      console.log(evt);
-    },
     ...mapActions([
       'getBoards',
     ]),

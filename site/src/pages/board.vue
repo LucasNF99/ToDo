@@ -10,6 +10,9 @@
       <div>
         <q-btn align="left" class="a-btn_add" dense no-caps label="Add list" icon="add"/>
       </div>
+      <div>
+        <q-input class="a-input-newlist" outlined v-model="text" label="Outlined" />
+      </div>
     </div>
   </div>
 </template>

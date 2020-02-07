@@ -27,6 +27,9 @@ const actions = {
       {
         id: 4, name: 'Card4', caption: 'Legenda', responsible: '', list: 1,
       },
+      {
+        id: 5, name: 'Card e', caption: 'Legenda', responsible: '', list: 3,
+      },
     ];
 
     commit('SET_CARDS', cards);
