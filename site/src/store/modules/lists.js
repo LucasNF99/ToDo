@@ -1,10 +1,30 @@
+const lists = [
+  {
+    id: 1,
+    name: 'ToDo',
+    board: 1,
+  },
+  {
+    id: 2,
+    name: 'ToDo',
+    board: 2,
+  },
+  {
+    id: 3,
+    name: 'Finish',
+    board: 1,
+  },
+];
+
+let id = 3;
+
 const getters = {
   lists: state => state.lists,
 };
 
 const mutations = {
-  SET_LISTS(state, lists) {
-    state.lists = lists;
+  SET_LISTS(state, mylists) {
+    state.lists = mylists;
   },
 };
 
@@ -14,24 +34,6 @@ const state = {
 
 const actions = {
   getLists({ commit }, cards) {
-    const lists = [
-      {
-        id: 1,
-        name: 'ToDo',
-        board: 1,
-      },
-      {
-        id: 2,
-        name: 'ToDo',
-        board: 2,
-      },
-      {
-        id: 3,
-        name: 'Finish',
-        board: 1,
-      },
-    ];
-
     lists.forEach((element) => {
       element.cards = [];
     });
@@ -44,6 +46,16 @@ const actions = {
       }
     }
 
+    commit('SET_LISTS', lists);
+  },
+  createList({ commit }, name) {
+    id += 1;
+    const newList = {
+      id,
+      name,
+      board: 1,
+    };
+    lists.push(newList);
     commit('SET_LISTS', lists);
   },
 };

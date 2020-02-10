@@ -8,10 +8,20 @@
         :cards="list.cards"
       ></list>
       <div>
-        <q-btn align="left" class="a-btn_add" dense no-caps label="Add list" icon="add"/>
-      </div>
-      <div>
-        <q-input class="a-input-newlist" outlined v-model="text" label="Outlined" />
+        <div class="q-pa-md teste">
+          <div class="cursor-pointer">
+            <q-btn
+            @click="addList = true"
+            align="left"
+            class="a-btn_add"
+            dense no-caps
+            label="Add list"
+            icon="add"/>
+            <q-popup-edit v-model="nickname" @save="createList">
+              <q-input v-model="nickname" dense autofocus counter />
+            </q-popup-edit>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -27,6 +37,12 @@ export default {
     hboard,
     list,
   },
+  data() {
+    return {
+      addList: false,
+      nickname: '',
+    };
+  },
   computed: {
     ...mapGetters([
       'lists',
@@ -34,9 +50,13 @@ export default {
     ]),
   },
   methods: {
+    createList() {
+      this.createList(this.nickname);
+    },
     ...mapActions([
       'getLists',
       'getCards',
+      'createList',
     ]),
   },
   created() {

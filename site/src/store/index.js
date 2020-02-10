@@ -11,7 +11,7 @@ export default function (/* { ssrContext } */) {
     modules: { boards, lists, cards },
     // enable strict mode (adds overhead!)
     // for dev mode only
-    strict: true,
+    strict: false,
   });
 
   return Store;
